@@ -49,3 +49,17 @@ android {
         }
     }
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.prygunov'
+                artifactId = 'libgdx-oboe'
+                version = '1.0'
+            }
+        }
+    }
+}
